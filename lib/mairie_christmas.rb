@@ -29,17 +29,22 @@ end
 
 
 def method_to_get (method_to_get_link)
-var = method_to_get_link.map { |word| word.gsub('./','http://annuaire-des-mairies.com') }
+
+   var = method_to_get_link.map { |word| word.gsub('./','http://annuaire-des-mairies.com') }
 
 end
+
 
 all_url= method_to_get (method_to_get_link) 
 
 p all_url
 
-def get_email_of_town (all_url)
-   p init_nokogiri (all_url)
-   method_to_get_email
+
+def get_email_of_town (all_url, page)
+   all_url.each do |x|
+   init_nokogiri (all_url)
+   method_to_get_link2 (page)
+   end
 end
 
 p get_email_of_town
